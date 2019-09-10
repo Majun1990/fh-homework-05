@@ -2,55 +2,49 @@ require 'homework05/version'
 
 class Person
   
-  def new(name)
-    person = Person.new
-    self
+  def initialize(name)
+    @name = name
   end
 
-  def name(name)
-    person = name
-    self
+  def name
+    @name
   end 
 
-  def to_s(name)
-    result = person.to_s
-    render result
-    self
+  def titlelize
+    result= @name.capitalize
+    @result = result
   end
 
-  def titleize(name)
-    result = person.titleize
-    render result
-    self
+  def upcase
+    result= @name.upcase
+    @result = result
   end
 
-  def upcase(name)
-    result = person.upcase
-    render result
-    self
+  def downcase
+    result = @name.downcase
+    @result = result
   end
 
-  def downcase(name)
-    result = person.downcase
-    render result
-    self
+  def reverse
+    result = @name.reverse
+    @result = result
   end
 
-  def reverse(name)
-    result = person.reverse
-    render result
-    self
-  end
-
-  def hyphenize(name)
-    result = person.each_char{|c| print c, "-" }
-    render result
-    self
-           
+  def hyphenize
+    result = @name.each_char{|c| print c, "-" }.delete_suffix('-')
+    @result = result
   end
 
   def undo
   end
+
+  def to_s
+    result = @name.to_s
+  else
+    @result.to_s
+  
+  end
+  
 end
 
 
