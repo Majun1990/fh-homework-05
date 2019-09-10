@@ -37,6 +37,10 @@ class Person
   end
 
   def undo
+    @stack = []
+    @stack << @result
+    @stack.pop
+    return @stack
   end
 
   def to_s
