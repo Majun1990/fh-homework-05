@@ -31,7 +31,8 @@ class Person
   end
 
   def hyphenize
-    result = @name.each_char{|c| print c, "-" }.delete_suffix('-')
+    arr = @name.chars
+    result = arr.join("-")
     @result = result
   end
 
@@ -39,10 +40,11 @@ class Person
   end
 
   def to_s
-    result = @name.to_s
-  else
-    @result.to_s
-  
+    if @result.nil?
+      return @name
+    else
+      return @result
+    end
   end
   
 end
