@@ -4,6 +4,7 @@ class Person
   
   def initialize(name)
     @name = name
+    @stack = [name]
   end
 
   def name
@@ -12,43 +13,43 @@ class Person
 
   def titlelize
     result= @name.capitalize
-    @result = result
+    @stack << result
+    self
   end
 
   def upcase
     result= @name.upcase
-    @result = result
+    @stack << result
+    self
   end
 
   def downcase
     result = @name.downcase
-    @result = result
+    @stack << result
+    self
   end
 
   def reverse
     result = @name.reverse
-    @result = result
+    @stack << result
+    self
   end
 
   def hyphenize
     arr = @name.chars
     result = arr.join("-")
-    @result = result
+    @stack << result
+    self
   end
 
   def undo
-    @stack = []
-    @stack << @result
     @stack.pop
-    return @stack
+    self
   end
 
   def to_s
-    if @result.nil?
-      return @name
-    else
-      return @result
-    end
+    @stack.last
+  
   end
   
 end
